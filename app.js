@@ -9,7 +9,7 @@ const displayPhone = (phones) => {
   console.log(phones);
    const container = document.getElementById("phone-container");
    container.textContent=" ";
-   phones=phones.slice(0,5);
+   phones=phones.slice(0,15);
   phones.forEach(phone=>{
     const newPhoneElement=document.createElement("div");
     newPhoneElement.classList.add("col");
