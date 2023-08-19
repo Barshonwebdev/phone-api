@@ -10,6 +10,13 @@ const displayPhone = (phones) => {
    const container = document.getElementById("phone-container");
    container.textContent=" ";
    phones=phones.slice(0,15);
+   const noPhone=document.getElementById("no-found");
+   if(phones.length===0){
+    noPhone.classList.remove("d-none");
+   }
+   else{
+    noPhone.classList.add("d-none");
+   }
   phones.forEach(phone=>{
     const newPhoneElement=document.createElement("div");
     newPhoneElement.classList.add("col");
