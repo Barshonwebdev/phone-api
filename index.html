@@ -21,7 +21,19 @@
       <button id="search-button" class="btn btn-primary ms-3">Search</button>
     </div>
     <div class="d-none" id="no-found">
-        <h4 class="text-danger ms-3">No phones found</h4>
+      <h4 class="text-danger ms-3">No phones found</h4>
+    </div>
+    <!-- loader  -->
+    <div id="loader" class="d-flex justify-content-center d-none">
+      <div class="spinner-grow text-secondary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <div class="spinner-grow text-secondary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <div class="spinner-grow text-secondary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
     </div>
     <div id="phone-container" class="row row-cols-1 row-cols-md-5 g-4"></div>
     <script src="./app.js"></script>

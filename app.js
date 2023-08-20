@@ -13,6 +13,7 @@ const displayPhone = (phones) => {
    const noPhone=document.getElementById("no-found");
    if(phones.length===0){
     noPhone.classList.remove("d-none");
+    toggleLoader(false);
    }
    else{
     noPhone.classList.add("d-none");
@@ -30,11 +31,24 @@ const displayPhone = (phones) => {
           </div>
         </div>`;
     container.appendChild(newPhoneElement);
+    toggleLoader(false);
   })
 };
 document.getElementById("search-button").addEventListener("click",function(){
+    toggleLoader(true);
     const searchTextElement=document.getElementById("searchText");
     const searchText=searchTextElement.value;
     loadPhones(searchText);
 })
 
+// toggle loader 
+const toggleLoader=isLoading=>{
+  const loader=document.getElementById("loader");
+  if(isLoading){
+    loader.classList.remove("d-none");
+  }
+
+  else {
+    loader.classList.add("d-none")
+  }
+}
