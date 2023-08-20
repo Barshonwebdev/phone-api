@@ -23,6 +23,38 @@
     <div class="d-none" id="no-found">
       <h4 class="text-danger ms-3">No phones found</h4>
     </div>
+    <!-- modal  -->
+    <div
+      class="modal fade"
+      id="detail-modal"
+      tabindex="-1"
+      aria-labelledby="detail-modalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="detail-modalLabel">Modal title</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body" id="modal-info"></div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- loader  -->
     <div id="loader" class="d-flex justify-content-center d-none">
       <div class="spinner-grow text-secondary" role="status">
@@ -35,9 +67,12 @@
         <span class="visually-hidden">Loading...</span>
       </div>
     </div>
-    <div id="phone-container" class="row row-cols-1 row-cols-md-5 container-fluid g-2"></div>
+    <div
+      id="phone-container"
+      class="row row-cols-1 row-cols-md-5 container-fluid g-2"
+    ></div>
     <div id="show-all" class="text-center mt-4 d-none">
-      <button id="show-button" class="btn btn-primary ">Show all</button>
+      <button id="show-button" class="btn btn-primary">Show all</button>
     </div>
     <script src="./app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
