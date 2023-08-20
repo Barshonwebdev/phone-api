@@ -36,6 +36,7 @@ const displayPhone = (phones,datalimit) => {
             <p class="card-text">
               ${phone.phone_name}
             </p>
+            <button id="detail-button" onClick="loadDetails('${phone.slug}')" class="mt-2 btn btn-primary">Show Details</button>
           </div>
         </div>`;
     container.appendChild(newPhoneElement);
@@ -60,11 +61,26 @@ const toggleLoader=isLoading=>{
   }
 
   else {
-    loader.classList.add("d-none")
+    loader.classList.add("d-none");
   }
 }
 
 // show all 
 document.getElementById("show-button").addEventListener("click",function(){
   processSearch();
+})
+
+// detail showing function 
+const loadDetails= async(id)=>{
+  const url = `https://openapi.programming-hero.com/api/phone/${id}`;
+  const res= await fetch(url);
+  const data= await res.json();
+  console.log(data.data.releaseDate);
+}
+
+// enter event 
+document.getElementById("searchText").addEventListener("keypress",function(e){
+    if(e.key==="Enter"){
+      processSearch(10);
+    }
 })
